@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRE 口语稿 — Shadow Price & Corporate Investment</title>
+<style>
+  :root { --accent: #1e3a8a; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --muted: #64748b; --highlight: #dbeafe; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: #1e293b; line-height: 1.75; }
+
+  header { background: var(--accent); color: #fff; padding: 32px 24px 24px; text-align: center; }
+  header h1 { font-size: 22px; font-weight: 700; }
+  header p { font-size: 13px; color: #93c5fd; margin-top: 6px; }
+
+  .controls { display: flex; justify-content: center; gap: 12px; padding: 16px; flex-wrap: wrap; }
+  .controls button { padding: 6px 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); cursor: pointer; font-size: 13px; transition: .15s; }
+  .controls button:hover, .controls button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 0 16px 60px; }
+
+  .slide-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 20px; overflow: hidden; transition: .2s; }
+  .slide-card:target, .slide-card:hover { box-shadow: 0 4px 20px rgba(30,58,138,.1); }
+
+  .slide-header { display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid var(--border); background: #f1f5f9; }
+  .slide-num { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+  .slide-title { font-weight: 600; font-size: 15px; color: var(--accent); }
+  .slide-time { margin-left: auto; font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  .slide-body { padding: 20px; }
+  .script-text { font-size: 15px; line-height: 1.9; }
+  .script-text p { margin-bottom: 12px; }
+  .key { background: var(--highlight); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+  .pause { display: inline-block; color: var(--muted); font-size: 12px; margin: 0 2px; }
+  .transition { display: block; margin: 14px 0 8px; padding: 8px 12px; background: #fef3c7; border-left: 3px solid #f59e0b; border-radius: 0 6px 6px 0; font-size: 13px; color: #92400e; }
+
+  .tip { font-size: 12px; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); }
+
+  .lang-toggle { display: none; }
+  .zh { display: none; }
+  .show-zh .zh { display: block; }
+  .show-zh .en-only { display: none; }
+
+  .toc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+  .toc h2 { font-size: 15px; color: var(--accent); margin-bottom: 10px; }
+  .toc ul { list-style: none; }
+  .toc li { padding: 4px 0; }
+  .toc a { color: #1e293b; text-decoration: none; font-size: 14px; }
+  .toc a:hover { color: var(--accent); }
+  .toc .t-time { color: var(--muted); font-size: 12px; margin-left: 6px; }
+
+  @media (max-width: 500px) { .slide-header { flex-wrap: wrap; } .slide-time { width: 100%; margin-top: 4px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PRE Script — How "Shadow Price" Influences Corporate Investment</h1>
+  <p>6505 Group Presentation · ~4 min · 7 slides</p>
+</header>
+
+<div class="controls">
+  <button onclick="toggleZh(this)">显示中文参考</button>
+  <button onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})">Slide 1</button>
+  <button onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})">Slide 2</button>
+  <button onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})">Slide 3</button>
+  <button onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})">Slide 4</button>
+  <button onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})">Slide 5</button>
+  <button onclick="document.getElementById('s6').scrollIntoView({behavior:'smooth'})">Slide 6</button>
+  <button onclick="document.getElementById('s7').scrollIntoView({behavior:'smooth'})">Slide 7</button>
+</div>
+
+<div class="container">
+
+<!-- TOC -->
+<div class="toc">
+  <h2>Structure Overview</h2>
+  <ul>
+    <li><a href="#s1">Slide 1 — Title: What is Shadow Price</a><span class="t-time">~30s</span></li>
+    <li><a href="#s2">Slide 2 — CPU: Policy Uncertainty Shock</a><span class="t-time">~45s</span></li>
+    <li><a href="#s3">Slide 3 — Canada Carbon Price Path</a><span class="t-time">~40s</span></li>
+    <li><a href="#s4">Slide 4 — Internal Channel: ICP</a><span class="t-time">~35s</span></li>
+    <li><a href="#s5">Slide 5 — Sector & International Level</a><span class="t-time">~40s</span></li>
+    <li><a href="#s6">Slide 6 — (continued) Cross-border</a><span class="t-time">~25s</span></li>
+    <li><a href="#s7">Slide 7 — Conclusion</a><span class="t-time">~25s</span></li>
+  </ul>
+</div>
+
+<!-- ==================== SLIDE 1 ==================== -->
+<div class="slide-card" id="s1">
+  <div class="slide-header">
+    <div class="slide-num">1</div>
+    <div class="slide-title">Title — What is Shadow Price</div>
+    <div class="slide-time">~30 sec</div>
+  </div>
+  <div class="slide-body">
+    <div class="script-text en-only">
+      <p>OK, so my part focuses on one question: <span class="key">how does "shadow price" actually influence corporate investment?</span></p>
+      <p>First, what is shadow price? <span class="pause">[pause]</span> It is <strong>not</strong> the carbon cost companies pay today. It is their <strong>prediction</strong> of what carbon will cost them in the future — including compliance spending, buying quotas, or internal pricing they set themselves.</p>
+      <p>The real concern is: will my long-term cash flow survive if policy keeps tightening? Will my assets become stranded? <span class="pause">[pause]</span> That prediction shapes where money goes.</p>
+    </div>
+    <div class="zh">
+      <p>我这部分聚焦一个问题：影子价格到底怎么影响企业投资？</p>
+      <p>首先，影子价格不是企业今天交的碳费，而是企业对未来碳成本的预测——合规支出、配额购买、内部碳价。核心关注是：政策继续收紧，我的现金流还能撑住吗？资产会不会搁浅？这个预判决定了钱往哪儿走。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2 ==================== -->
+<div class="slide-card" id="s2">
+  <div class="slide-header">
+    <div class="slide-num">2</div>
+    <div class="slide-title">CPU — The Policy Uncertainty Shock</div>
+    <div class="slide-time">~45 sec</div>
+  </div>
+  <div class="slide-body">
+    <div class="script-text en-only">
+      <p>But here is the problem: <span class="key">policy signals are not always clear.</span></p>
+      <p>Gavriilidis in 2026 built a Climate Policy Uncertainty index using news data. He found that when uncertainty rises, it works like a supply shock — output falls, prices rise, and companies with high climate exposure <strong>cut</strong> investment and R&D.</p>
+      <p>Liu, also in 2026, looked at the EU carbon market and found something interesting: <span class="pause">[pause]</span> in a trading market, <strong>trading behavior itself amplifies price swings</strong>. So the carbon price companies actually feel can be very different from what the policy document says.</p>
+      <p><span class="transition">→ Key takeaway: when policy is unclear, companies discount more heavily. Their internal shadow price disconnects from the official path, and investment response weakens.</span></p>
+    </div>
+    <div class="zh">
+      <p>但问题在于政策信号并不总是清晰的。Gavriilidis（2026）用新闻文本构建了"气候政策不确定性指数"，发现不确定性上升就像供给冲击——产出降、价格涨，高气候暴露的企业砍投资和研发。Liu（2026）在欧盟碳市场发现：交易行为本身会放大碳价波动，企业感受到的价格和政策文件上的不一样。所以关键是：政策越模糊，企业折现越保守，影子价格和官方路径脱节，投资反应就弱了。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 3 ==================== -->
+<div class="slide-card" id="s3">
+  <div class="slide-header">
+    <div class="slide-num">3</div>
+    <div class="slide-title">Canada Carbon Price Path</div>
+    <div class="slide-time">~40 sec</div>
+  </div>
+  <div class="slide-body">
+    <div class="script-text en-only">
+      <p>Now let's look at a concrete example. <span class="pause">[pause]</span> Canada's federal benchmark sets a clear schedule: the carbon price rises by <span class="key">15 Canadian dollars per tonne every year</span>, reaching 170 dollars per tonne by 2030.</p>
+      <p>For companies, this schedule is like a price escalator — it gives them a basis to set their shadow price.</p>
+      <p>However, <span class="pause">[pause]</span> in March 2025, the government updated the benchmark page. The focus shifted to <strong>industrial emissions pricing</strong>, and the consumer-side fuel charge was removed. <span class="pause">[pause]</span> So the old path and the new signal now coexist. If policy direction shifts, companies need to reassess their carbon cost assumptions.</p>
+    </div>
+    <div class="zh">
+      <p>来看具体案例。加拿大联邦基准设定了清晰的涨价表：每年涨15加元/吨，到2030年达170加元/吨。企业可以据此设影子价格。但2025年3月基准页更新，重心转向工业排放定价，消费端燃料费取消了。旧路径和新信号并存，如果方向不一致，企业就得重新评估碳成本假设。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 4 ==================== -->
+<div class="slide-card" id="s4">
+  <div class="slide-header">
+    <div class="slide-num">4</div>
+    <div class="slide-title">Internal Channel — ICP</div>
+    <div class="slide-time">~35 sec</div>
+  </div>
+  <div class="slide-body">
+    <div class="script-text en-only">
+      <p>Even when the external carbon price is clear, what happens inside the company matters too.</p>
+      <p><span class="key">ICP — Internal Carbon Pricing</span> — is a management tool. Companies write carbon cost into their project approval process.</p>
+      <p>But Qin in 2023 found that <span class="pause">[pause]</span> ICP does <strong>not</strong> push all types of investment equally. Energy intensity plays a positive role — meaning energy-heavy projects respond well. But R&D spending actually has a <strong>shielding effect</strong> — it absorbs the pressure, so less money flows into other areas.</p>
+      <p><span class="transition">→ In short: shadow price enters the budget, but how money is distributed inside the company can be quite uneven.</span></p>
+    </div>
+    <div class="zh">
+      <p>即使外部碳价清晰，企业内部怎么处理也很关键。ICP（内部碳定价）是企业把碳成本写进项目审批的管理工具。但Qin（2023）发现ICP不会均匀推动所有类型的投资——能源密度起正向中介作用，而研发支出有"遮蔽效应"，会吸收压力。所以影子价格进了预算，但钱怎么分配，内部差异很大。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 5–6 ==================== -->
+<div class="slide-card" id="s5">
+  <div class="slide-header">
+    <div class="slide-num">5</div>
+    <div class="slide-title">Sector & International Level</div>
+    <div class="slide-time">~40 sec (Slides 5–6)</div>
+  </div>
+  <div class="slide-body">
+    <div class="script-text en-only">
+      <p>Now, does shadow price work the same across all industries and countries? <span class="pause">[pause]</span> No.</p>
+      <p>Dilek in 2026 studied California and found that when <span class="key">carbon pricing works together with electricity market rules</span>, renewable energy investment actually increases. So under the right system, carbon price can redirect money.</p>
+      <p>But for hard-to-reduce industries — like steel or cement — the IEA points out that carbon price alone is <strong>not enough</strong>. You also need subsidies, long-term contracts, and technical standards, especially for things like CCUS.</p>
+      <p>And Bistline in 2023 showed that in the US, capital decisions are shaped by <strong>multiple factors</strong> — tax credits, electricity prices, interest rates — not just carbon price. <span class="pause">[pause]</span> So we should avoid explaining investment changes by carbon price alone.</p>
+    </div>
+    <div class="zh">
+      <p>影子价格在所有行业和国家都一样管用吗？不是。Dilek（2026）在加州发现，碳定价和电力市场规则配合时，可再生能源投资确实增加了。但IEA指出，难减排行业（如钢铁、水泥）单靠碳价不够，还需要补贴、长约和技术标准。Bistline（2023）表明美国的资本配置受税收抵免、电价、利率等多重因素影响，不能只用碳价来解释。</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-card" id="s6">
+  <div class="slide-header">
+    <div class="slide-num">6</div>
+    <div class="slide-title">(continued — cross-border context)</div>
+    <div class="slide-time">~25 sec</div>
+  </div>
+  <div class="slide-body">
+    <div class="script-text en-only">
+      <p>Globally, carbon taxes and emissions trading systems are still spreading. <span class="pause">[pause]</span> Placing the Canadian case in this bigger picture helps us avoid isolated interpretation — what happens in Canada is connected to global trends.</p>
+    </div>
+    <div class="zh">
+      <p>全球范围内碳税和碳交易体系仍在扩散，把加拿大案例放在国际大背景下看，避免孤立解读。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 7 ==================== -->
+<div class="slide-card" id="s7">
+  <div class="slide-header">
+    <div class="slide-num">7</div>
+    <div class="slide-title">Conclusion</div>
+    <div class="slide-time">~25 sec</div>
+  </div>
+  <div class="slide-body">
+    <div class="script-text en-only">
+      <p>So, to wrap up. <span class="pause">[pause]</span> Whether a rising carbon price can actually turn into low-carbon investment depends on <span class="key">five things</span>:</p>
+      <p>One, is the policy signal stable? <span class="pause">[brief]</span> Two, does the carbon market add uncertainty? <span class="pause">[brief]</span> Three, does the company's internal pricing match its actual investment channels? <span class="pause">[brief]</span> Four, does the industry need tools beyond carbon pricing? <span class="pause">[brief]</span> And five, do neighboring countries' policies change the picture?</p>
+      <p>The bottom line is: <span class="key">carbon price guides investment, but the process is not automatic, not linear, and not frictionless.</span></p>
+      <p>That's my part. Thank you.</p>
+    </div>
+    <div class="zh">
+      <p>总结：碳价上涨能否真正转化为低碳投资，取决于五个条件——政策信号稳定性、碳市场不确定性、企业内部ICP与实际投资渠道是否匹配、行业是否需要碳价以外的配套工具、邻国政策与要素价格。碳价引导投资，但这个过程不是自动的、线性的、无摩擦的。以上是我的部分，谢谢。</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- container -->
+
+<script>
+function toggleZh(btn) {
+  document.body.classList.toggle("show-zh");
+  btn.classList.toggle("active");
+  btn.textContent = document.body.classList.contains("show-zh") ? "隐藏中文参考" : "显示中文参考";
+}
+</script>
+</body>
+</html>
